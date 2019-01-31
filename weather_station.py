@@ -93,7 +93,7 @@ def check_connectivity():
 
 if __name__=="__main__":
     check_connectivity()
-    data_loc = '/home/pi/Desktop/Weather_Station/data/'
+    data_loc = '/home/pi/Desktop/schools_stations/data/'
     p = platform.system()
     if p == 'Windows':
         data_loc = string.replace(data_loc,'/','\\')
