@@ -7,12 +7,12 @@ HMH - 15/01/2019
 '''
 
 import sys,time,os,urllib
-import Adafruit_DHT, Adafruit_MCP3008
-import Adafruit_GPIO.SPI as SPI
-import RPi.GPIO as GPIO
-import spidev
+import Adafruit_DHT#, Adafruit_MCP3008
+#import Adafruit_GPIO.SPI as SPI
+#import RPi.GPIO as GPIO
+#import spidev
 import numpy as np
-from gpiozero import DigitalInputDevice
+#from gpiozero import DigitalInputDevice
 from time import sleep
 import datetime,requests,json
 import smtplib
@@ -78,42 +78,6 @@ def dust_helper():
     aqi.cmd_set_sleep()
     #time.sleep(300)
     return pm10,pm25
-
-
-def read_analog(numSamples,pinVal):
-    #Hardware SPI configuration:
-    SPI_PORT = 0
-    SPI_DEVICE = 0
-    mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
-
-    # Choose GPIO pin - not actually sure if we need this, but leaving it in for meow
-    ledPin = 18
-
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(ledPin,GPIO.OUT)
-
-    samplingTime = 280.0
-    deltaTime = 40.0
-    sleepTime = 9680.0
-    
-    return_array = []
-    try: 
-        for i in range(0,numSamples):
-            GPIO.output(ledPin,0)
-            time.sleep(samplingTime*10.0**-6)
-            # The read_adc function will get the value of the specified channel
-            voMeasured = mcp.read_adc(pinVal)
-            time.sleep(samplingTime*10.0**-6)
-            GPIO.output(ledPin,1)
-            time.sleep(samplingTime*10.0**-6)
-            calcVoltage = voMeasured*(5.0/1024)
-            return_array.append(calcVoltage)
-            time.sleep(1)
-
-    except KeyboardInterrupt:
-        GPIO.cleanup()
-    return return_array
-
 
 def check_connectivity():
     status = None
