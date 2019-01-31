@@ -7,12 +7,8 @@ HMH - 15/01/2019
 '''
 
 import sys,time,os,urllib
-import Adafruit_DHT#, Adafruit_MCP3008
-#import Adafruit_GPIO.SPI as SPI
-#import RPi.GPIO as GPIO
-#import spidev
+import Adafruit_DHT
 import numpy as np
-#from gpiozero import DigitalInputDevice
 from time import sleep
 import datetime,requests,json
 import smtplib
