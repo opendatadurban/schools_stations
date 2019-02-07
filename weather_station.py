@@ -113,8 +113,8 @@ if __name__=="__main__":
     myname = os.uname()[1]
 
     print "Welcome to your local weather station." 
-    print "You currently live at ",my_location"."
-    print "If this is no longer accurate, please update your loaction."
+    print "You currently live at " + my_location + "."
+    print "If this is no longer accurate, please update your location."
     
     Run = 'forever'
     while Run == 'forever': 
