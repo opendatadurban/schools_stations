@@ -49,7 +49,7 @@ if you need help: https://remot3it.zendesk.com/hc/en-us/articles/115006015367-In
 Step 7: Set cronjob
 -------
 sudo crontab -e
-@reboot sh /home/pi/Desktop/Weather_Station/run_weatherstation.sh >> /home/pi/Desktop/Weather_Station/cronlog 2>&1
+@reboot sh /home/pi/Desktop/schools_stations/run_weatherstation.sh >> /home/pi/Desktop/schools_stations/cronlog 2>&1
 
 remember to leave a blank line...
 
