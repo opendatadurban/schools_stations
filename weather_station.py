@@ -92,6 +92,7 @@ def check_connectivity():
     print status
 
 if __name__=="__main__":
+    my_location = "14 Moore Grove, Berea, Durban, 4001"
     check_connectivity()
     data_loc = '/home/pi/Desktop/schools_stations/data/'
     p = platform.system()
@@ -112,6 +113,8 @@ if __name__=="__main__":
     myname = os.uname()[1]
 
     print "Welcome to your local weather station." 
+    print "You currently live at ",my_location"."
+    print "If this is no longer accurate, please update your loaction."
     
     Run = 'forever'
     while Run == 'forever': 
@@ -292,7 +295,7 @@ if __name__=="__main__":
             
             print 'talking to server'
             # post to the village
-            payload = {'press':press,'press_time':press_time,'temp': temperature,'temp_time':temp_time,'humid':humidity,'temp_time':temp_time,'pm_10':pm10,'dust_time':dust_time,'pm_25':pm25,'dust_time':dust_time}
+            payload = {'press':press,'press_time':press_time,'temp': temperature,'temp_time':temp_time,'humid':humidity,'temp_time':temp_time,'pm_10':pm10,'dust_time':dust_time,'pm_25':pm25,'dust_time':dust_time,'loc':my_location}
             headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
             try:
                 postad = "http://citizen-sensors.herokuapp.com/data/"+myname
