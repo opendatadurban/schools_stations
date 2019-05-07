@@ -18,7 +18,18 @@ edit /etc/dhcpcd.conf
 Add the following to the bottom:
 
 interface wlan0
-inform 192.168.1.110 # or whatever IP your router uses
+arping 192.168.8.1   #HOME
+arping 192.168.1.1   #ODD
+
+profile 192.168.8.1
+static ip_address=192.168.8.115/24
+static routers=192.168.8.1
+static domain_name_servers=192.168.8.1
+
+profile 192.168.1.1
+static ip_address=192.168.1.115/24
+static routers=192.168.1.1
+static domain_name_servers=192.168.1.1
 
 
 Step 3: install git
