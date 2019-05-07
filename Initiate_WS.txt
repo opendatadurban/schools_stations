@@ -31,6 +31,25 @@ static ip_address=192.168.1.115/24
 static routers=192.168.1.1
 static domain_name_servers=192.168.1.1
 
+===============================================
+edit /etc/wpa_supplicant/wpa_supplicant.conf
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=ZA
+
+network={
+        ssid="ScwifityB_EXT"
+	psk="0741893105"
+	key_mgmt=WPA-PSK
+}
+
+network={
+        ssid="Open Data Durban"
+	psk="CivicTech"
+	key_mgmt=WPA-PSK
+}
+			
+
 
 Step 3: install git
 --------
