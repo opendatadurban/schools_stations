@@ -8,12 +8,12 @@
 #update-rc.d apache2 enable
 
 #Install the "basics"
-sudo apt-get install build-essential python-dev python-smbus python-rpi.gpio gpsd gpsd-clients python-gps rrdtool
+sudo apt-get install -y build-essential python-dev python-smbus python-rpi.gpio gpsd gpsd-clients python-gps rrdtool
 
 #Supporting libraries
-sudo apt-get install php5 php5-dev php-pear libyaml-dev python-rrdtool php5-rrd
-sudo pecl install yaml-0.6.3
-sudo apt-get install python-yaml
+sudo apt-get install -y php5 php5-dev php-pear libyaml-dev python-rrdtool php5-rrd
+#sudo pecl install yaml-0.6.3
+sudo apt-get install -y python-yaml
 #sudo python -m pip install wiringpi
 
 #other projects code:
@@ -32,7 +32,7 @@ cd ~
 #sudo apt-get install python-numpy python-
 
 # Set up port forwarding
-sudo apt-get update
-sudo apt-get install weavedconnectd
-sudo apt-get upgrade
+sudo apt-get update -y
+sudo apt-get install -y weavedconnectd
+sudo apt-get upgrade -y
 sudo apt-get update --fix-missing
