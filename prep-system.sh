@@ -13,7 +13,7 @@ sudo apt-get install -y build-essential python-dev python-smbus python-rpi.gpio 
 #Supporting libraries
 sudo apt-get install -y php5 php5-dev php-pear libyaml-dev python-rrdtool php5-rrd
 #sudo pecl install yaml-0.6.3
-sudo apt-get install -y python-yaml
+#sudo apt-get install -y python-yaml
 #sudo python -m pip install wiringpi
 
 #other projects code:
@@ -33,6 +33,6 @@ cd ~
 
 # Set up port forwarding
 sudo apt-get update -y
-sudo apt-get install -y weavedconnectd
-sudo apt-get upgrade -y
-sudo apt-get update --fix-missing
+#sudo apt-get install -y weavedconnectd
+#sudo apt-get upgrade -y
+#sudo apt-get update --fix-missing
