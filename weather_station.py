@@ -295,10 +295,10 @@ if __name__=="__main__":
             
             print 'talking to server'
             # post to the village
-            payload = {'press':press,'press_time':press_time,'temp': temperature,'temp_time':temp_time,'humid':humidity,'temp_time':temp_time,'pm_10':pm10,'dust_time':dust_time,'pm_25':pm25,'dust_time':dust_time,'loc':my_location}
+            payload = {'press':press,'press_time':press_time,'temp': temperature,'temp_time':temp_time,'humid':humidity,'temp_time':temp_time,'pm_10':pm10,'dust_time':dust_time,'pm_25':pm25,'dust_time':dust_time,'loc':my_location,'device_ID':myname}
             headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
             try:
-                postad = "http://citizen-sensors.herokuapp.com/data/"+myname
+                postad = "http://citizen-sensors.herokuapp.com/data"
                 r = requests.post(postad, data=json.dumps(payload),headers=headers)
    
             except Exception as e:
