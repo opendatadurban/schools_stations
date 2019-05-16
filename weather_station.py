@@ -52,6 +52,7 @@ def get_press():
     return temperature,pressure
 
 def dust_helper():
+    time.sleep(2)
     pm25 = []
     pm10 = []
     aqi.cmd_set_sleep(0)
