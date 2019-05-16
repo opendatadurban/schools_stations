@@ -52,15 +52,13 @@ def get_press():
     return temperature,pressure
 
 def dust_helper():
-    time.sleep(2)
     pm25 = []
     pm10 = []
     aqi.cmd_set_sleep(0)
-    aqi.cmd_set_mode(1);
+    aqi.cmd_set_mode(1)
+    time.sleep(10)
     for t in range(15):
-        #print 'getting dust reading number ',t
-        values = aqi.cmd_query_data();
-        #print np.shape(values)
+        values = aqi.cmd_query_data()
         try:
             pm25.append(values[0])
             pm10.append(values[1])
@@ -68,12 +66,8 @@ def dust_helper():
             print 'values is none'
             
         time.sleep(2)
-    #print pm10
-    #print pm25
-    #print("Going to sleep for 5min...")
-    aqi.cmd_set_mode(0);
+    aqi.cmd_set_mode(0)
     aqi.cmd_set_sleep()
-    #time.sleep(300)
     return pm10,pm25
 
 def check_connectivity():
