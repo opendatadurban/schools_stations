@@ -56,7 +56,7 @@ def dust_helper():
     pm10 = []
     aqi.cmd_set_sleep(0)
     aqi.cmd_set_mode(1)
-    time.sleep(30)
+    time.sleep(2)
     for t in range(60):
         values = aqi.cmd_query_data()
         try:
@@ -67,7 +67,7 @@ def dust_helper():
             
         time.sleep(2)
     aqi.cmd_set_mode(0)
-    aqi.cmd_set_sleep()
+    #aqi.cmd_set_sleep()
     return pm10,pm25
 
 def check_connectivity():
