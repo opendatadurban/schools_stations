@@ -56,8 +56,8 @@ def dust_helper():
     pm10 = []
     aqi.cmd_set_sleep(0)
     aqi.cmd_set_mode(1)
-    time.sleep(10)
-    for t in range(15):
+    time.sleep(30)
+    for t in range(60):
         values = aqi.cmd_query_data()
         try:
             pm25.append(values[0])
@@ -243,6 +243,8 @@ if __name__=="__main__":
                         print "ERROR: Failed to access Gmail"
             
             # Dust
+            m_time = time.time()
+            print "The time is...:", datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
             print "Checking dust"
             try:
                 pm10_array,pm25_array = dust_helper()
