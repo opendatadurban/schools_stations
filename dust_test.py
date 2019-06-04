@@ -7,9 +7,10 @@ def dust_helper():
     pm10=[]
     print 'turning system on'
     aqi.cmd_set_sleep(0)
+    #time.sleep(1)
     aqi.cmd_set_mode(1)
     time.sleep(10)
-    for t in range(15):
+    for t in range(15): # 15 samples @ 1/sec
         values = aqi.cmd_query_data()
         try:
             pm25.append(values[0])
@@ -28,3 +29,4 @@ if __name__=="__main__":
         time.sleep(2)
         pm_10,pm25 = dust_helper()
         print pm_10
+        time.sleep(5)
